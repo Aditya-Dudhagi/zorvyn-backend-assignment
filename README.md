@@ -223,3 +223,33 @@ Error:
 - Bootstrap of first admin user is done manually (DB seed or direct SQL update).
 - Inactive users cannot authenticate or access protected endpoints.
 - Record amount uses decimal precision at DB level (`Decimal(14,2)`).
+
+## Manual Role Update (Direct DB Query)
+
+If you need to grant elevated access quickly (for example, to bootstrap an admin), update the user role directly in PostgreSQL.
+
+Set a user as `ADMIN`:
+
+```sql
+UPDATE "User"
+SET role = 'ADMIN'
+WHERE email = 'john@example.com';
+```
+
+Set a user as `ANALYST`:
+
+```sql
+UPDATE "User"
+SET role = 'ANALYST'
+WHERE email = 'john@example.com';
+```
+
+You can also target by user id:
+
+```sql
+UPDATE "User"
+SET role = 'ADMIN'
+WHERE id = 'user-uuid-here';
+```
+
+
