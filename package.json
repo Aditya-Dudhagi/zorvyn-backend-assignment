@@ -1,0 +1,38 @@
+{
+  "name": "finance-data-processing-api",
+  "version": "1.0.0",
+  "description": "Backend system for finance data processing and access control",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "prisma",
+    "postgresql",
+    "jwt",
+    "zod"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prisma": "^6.5.0"
+  }
+}
